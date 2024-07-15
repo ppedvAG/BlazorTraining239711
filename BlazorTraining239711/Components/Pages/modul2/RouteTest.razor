@@ -1,0 +1,8 @@
+﻿@page "/test"
+@page "/franz/{id:int?}"
+<h3>RouteTest @id</h3>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+}
