@@ -1,0 +1,15 @@
+﻿@page "/binding"
+<h3>Binding</h3>
+<input @bind-value="Eingabe" @bind-value:event="oninput"/>
+
+<input   value="@Eingabe" @oninput="(e)=>inp(e)"/>
+<hr />
+@Eingabe
+
+@code {
+    string Eingabe;
+    void inp(ChangeEventArgs args)
+    {
+        Eingabe = args.Value.ToString();
+    }
+}
