@@ -1,0 +1,21 @@
+﻿@page "/nava"
+@page "/navb"
+@inject NavigationManager SuperMan
+<h3>Navi</h3>
+<ul>
+    <li><a href="nava">A</a></li>
+    <li><a href="navb">B</a></li>
+    <li><a href="navb?id=1">B</a></li>
+</ul>
+<button class="btn btn-outline-primary" @onclick="Franz">add Nav</button>
+@code {
+    void Franz()
+    {
+        SuperMan.LocationChanged += UrlChanged;
+
+    }
+    void UrlChanged(object sender,LocationChangedEventArgs args)
+    {
+        
+    }
+}
