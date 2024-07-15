@@ -1,6 +1,21 @@
 ﻿@page "/atr"
 <h3>AttributeAttribute</h3>
-
+<input type="text" class="form-control" @bind="Eingabe" @ref="eins" >
+<Attr @ref="zwei"></Attr>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" @bind="Eingabe" @onkeydown="KeyDown">
+    <button class="btn btn-outline-secondary" type="button" >Button</button>
+</div>
 @code {
-
+    string Eingabe;
+    ElementReference eins;
+    Attr zwei;
+    void KeyDown(KeyboardEventArgs args)
+    {
+        if (args.Key=="-")
+        {
+            eins.FocusAsync();
+        }
+        
+    }
 }
