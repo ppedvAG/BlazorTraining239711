@@ -1,0 +1,38 @@
+﻿@page "/kunden"
+@using Models
+@inject NorthwindContext VM
+
+<h3>Kunden</h3>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <input class="form-control" placeholder="suche" @bind="Eingabe"
+                       @bind:event="oninput" />
+                <button class="btn btn-outline-info">
+                    <i class="bi bi-funnel"></i> filter</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item active">Kunden</li>
+                @foreach (var item in VM.Customers.Where(x => x.CompanyName.Contains(Eingabe)))
+                    {
+
+                        <li class='list-group-item '>
+                           @item.CustomerId @item.CompanyName
+                        </li>
+                    }
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+@code {
+    string Eingabe="";
+}
