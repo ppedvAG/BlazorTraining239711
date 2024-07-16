@@ -1,0 +1,14 @@
+﻿<h3>Component</h3>
+@Name
+@code {
+    [EditorRequired]
+    [Parameter]
+    public int MyProperty { get; set; }
+    [Parameter(CaptureUnmatchedValues =true)]
+    public Dictionary<string,object> Alles { get; set; }
+    [CascadingParameter]
+    public int Wert { get; set; }
+
+    [CascadingParameter(Name="Franz")]
+    public string Name { get; set; }
+}
