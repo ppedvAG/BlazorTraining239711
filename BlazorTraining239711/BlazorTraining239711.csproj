@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\Pages\modul7\" />
+    <Folder Include="Components\Pages\modul8\" />
+  </ItemGroup>
+
 </Project>
