@@ -1,0 +1,16 @@
+﻿@page "/js"
+@inject IJSRuntime JsRuntime
+<h3>JSComponent</h3>
+
+<button @onclick="alert">alert</button>
+@eingabe
+@code {
+    string eingabe;
+    async Task alert()
+    {
+        //JsRuntime.InvokeVoidAsync("alert", "Hallo Welt");
+
+       // eingabe= await JsRuntime.InvokeAsync<String>("prompt", "Eingabe");
+        JsRuntime.InvokeVoidAsync("ppedv","Nachricht");
+    }
+}
