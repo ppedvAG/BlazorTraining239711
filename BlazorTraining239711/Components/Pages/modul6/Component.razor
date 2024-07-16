@@ -1,5 +1,19 @@
 ﻿<h3>Component</h3>
 @Name
+
+<hr />
+@ChildContent
+
+<hr />
+
+<hr />
+@Kopf
+
+<hr />
+<hr />
+@Fuss
+
+<hr />
 @code {
     [EditorRequired]
     [Parameter]
@@ -11,4 +25,12 @@
 
     [CascadingParameter(Name="Franz")]
     public string Name { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment Kopf { get; set; }
+    [Parameter]
+    public RenderFragment Fuss { get; set; }
 }
