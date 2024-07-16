@@ -1,0 +1,18 @@
+﻿@page "/js2"
+@inject IJSRuntime JsRuntime
+<h3>JS2</h3>
+<button @onclick="js">js</button>
+@code {
+    IJSObjectReference modul;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            modul=await JsRuntime.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/modul8/Js2.razor.js");
+        }
+    }
+    void js()
+    {
+        modul.InvokeVoidAsync("ppedv", "Hallo Welt");
+    }
+}
