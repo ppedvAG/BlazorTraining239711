@@ -1,0 +1,31 @@
+﻿@page "/repeater"
+@using BlazorTraining239711.Models
+@inject NorthwindContext db
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Company</th>
+        </tr>
+    </thead>
+    <tbody>
+        <RepeaterPPEDV ModelType="Customer" SelectMethod="lade" Context="Item">
+            <EmptyItemTemplate><tr><td colspan="2">keine daten</td></tr></EmptyItemTemplate>
+            <ItemTemplate>
+
+                <tr>
+                    <td>@Item.CustomerId</td>
+                    <td>@Item.CompanyName</td>
+
+                </tr>
+            </ItemTemplate>
+        </RepeaterPPEDV>
+
+    </tbody>
+</table>
+@code {
+    List<Customer> lade()
+    {
+        return db.Customers.ToList();
+    }
+}
